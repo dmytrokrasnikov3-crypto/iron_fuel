@@ -1,0 +1,148 @@
+.site-footer {
+    background-color: #f5f5f5;
+    border-top: 3px solid #e53935;
+    padding: 40px 20px 20px;
+    color: #333;
+    font-family: inherit;
+    margin-top: 60px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr repeat(4, 1fr);
+    gap: 30px;
+}
+
+.col-title {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 14px;
+    font-weight: 500;
+}
+
+.social-icons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 18px;
+    transition: transform 0.2s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.qr-title {
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.app-download-block {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.qr-placeholder img {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+    padding: 4px;
+}
+
+.store-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.store-badge {
+    display: flex;
+    flex-direction: column;
+    background: #000;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 10px;
+    line-height: 1.2;
+}
+
+.store-badge strong {
+    font-size: 12px;
+}
+
+.store-badge:hover {
+    background: #222;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a {
+    color: #222;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #e53935;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #777;
+}
+
+.payment-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.payment-badge {
+    font-weight: bold;
+    font-size: 11px;
+    padding: 4px 8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #333;
+}
+
+@media (max-width: 900px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}

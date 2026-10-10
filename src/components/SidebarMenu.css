@@ -1,0 +1,132 @@
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+}
+
+.sidebar-container {
+    width: 320px;
+    max-width: 85vw;
+    height: 100%;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
+    font-family: Arial, sans-serif;
+    overflow-y: auto;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    color: #555;
+}
+
+.sidebar-tabs {
+    display: flex;
+    background: #f2f2f2;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 14px 6px;
+    border: none;
+    background: transparent;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    color: #444;
+    cursor: pointer;
+    border-right: 1px solid #e0e0e0;
+}
+
+.tab-btn:last-child {
+    border-right: none;
+}
+
+.tab-btn.active {
+    background: #ffffff;
+}
+
+.tab-content {
+    padding: 10px 0;
+}
+
+.menu-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #222;
+    text-decoration: none;
+    font-size: 13px;
+    cursor: pointer;
+    background: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    text-align: left;
+}
+
+.menu-item.bold {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.menu-item.icon-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-start;
+    font-weight: 600;
+}
+
+.highlight-red {
+    color: #e53935;
+    font-weight: bold;
+}
+
+.highlight-green {
+    color: #2e7d32;
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.help-section {
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.help-title {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+.help-email {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #111;
+    font-weight: bold;
+    font-size: 13px;
+    text-decoration: none;
+}
