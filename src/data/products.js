@@ -1,4 +1,4 @@
-import { SupplementProduct, DiscountedProduct, AccessoryProduct } from '../models/Product';
+import {SupplementProduct, DiscountedProduct, AccessoryProduct} from '../models/Product';
 
 export const initialProducts = [
     new SupplementProduct(
@@ -6,7 +6,7 @@ export const initialProducts = [
         '100% Whey Gold Standard',
         64.99,
         'Protein',
-        '',
+        '/images/100 Whey Gold Standard.jpeg',
         'Преміальний сироватковий ізолят та концентрат.',
         '30g',
         74,
@@ -17,7 +17,8 @@ export const initialProducts = [
         'IsoFlex Whey Protein Isolate',
         72.50,
         'Protein',
-        '',        'Ультрачистий ізолят сироваткового протеїну з нульовим вмістом цукру.',
+        '/images/IsoFlex Whey Protein Isolate.jpeg',
+        'Ультрачистий ізолят сироваткового протеїну з нульовим вмістом цукру.',
         '30g',
         75,
         'Vanilla Ice Cream'
@@ -27,7 +28,8 @@ export const initialProducts = [
         'Casein Night Repair Protein',
         58.00,
         'Protein',
-        '',        'Повільний міцелярний казеїн для підживлення мʼязів під час сну.',
+        '/images/Casein Night Repair Protein.jpeg',
+        'Повільний міцелярний казеїн для підживлення мʼязів під час сну.',
         '33g',
         55,
         'Strawberry Cream'
@@ -37,7 +39,8 @@ export const initialProducts = [
         'Plant Organic Vegan Protein',
         49.99,
         'Protein',
-        '',        'Органічний рослинний протеїн із гороху та горошку бета.',
+        '/images/Plant Organic Vegan Protein.jpeg',
+        'Органічний рослинний протеїн із гороху та горошку бета.',
         '35g',
         40,
         'Salted Caramel'
@@ -45,10 +48,11 @@ export const initialProducts = [
 
     new SupplementProduct(
         5,
-        'Creatine Monohydrate Unflavored',
+        'Creatine Monohydrate Unflavored.jpeg',
         29.99,
         'Creatine',
-        '',        'Чистий мікронізований креатин моногідрат для збільшення сили.',
+        '/images/Creatine Monohydrate Unflavored.jpeg',
+        'Чистий мікронізований креатин моногідрат для збільшення сили.',
         '5g',
         100,
         'Unflavored'
@@ -58,7 +62,8 @@ export const initialProducts = [
         'Creatine HCL Max Power',
         36.50,
         'Creatine',
-        '',        'Гідрохлорид креатину з високою засвоюваністю без затримки води.',
+        '/images/Creatine HCL Max Power.jpeg',
+        'Гідрохлорид креатину з високою засвоюваністю без затримки води.',
         '3g',
         90,
         'Lemon Lime'
@@ -68,7 +73,8 @@ export const initialProducts = [
         'Tri-Creatine Malate Blast',
         32.00,
         'Creatine',
-        '',        'Креатин малат для підвищення витривалості та енергії.',
+        '/images/Tri-Creatine Malate Blast.jpeg',
+        'Креатин малат для підвищення витривалості та енергії.',
         '5g',
         80,
         'Fruit Punch'
@@ -79,7 +85,8 @@ export const initialProducts = [
         'BCAA Energy Boost 2:1:1',
         34.99,
         'Amino acids',
-        '',        'Комплекс незамінних амінокислот із додаванням природного кофеїну.',
+        '/images/BCAA Energy Boost.jpeg',
+        'Комплекс незамінних амінокислот із додаванням природного кофеїну.',
         20
     ),
     new SupplementProduct(
@@ -87,7 +94,8 @@ export const initialProducts = [
         'Essential EAA Intra-Workout',
         39.99,
         'Amino acids',
-        '',        'Повний спектр 9 незамінних амінокислот для підтримки під час тренувань.',
+        '/images/Essential EAA Intra-Workout.jpeg',
+        'Повний спектр 9 незамінних амінокислот для підтримки під час тренувань.',
         '12g',
         30,
         'Blue Raspberry'
@@ -97,7 +105,8 @@ export const initialProducts = [
         'L-Glutamine Micronized Powder',
         24.99,
         'Amino acids',
-        '',        'Амінокислота глутамін для швидкого відновлення та імунітету.',
+        '/images/L-Glutamine Micronized Powder.jpeg',
+        'Амінокислота глутамін для швидкого відновлення та імунітету.',
         '5g',
         60,
         'Unflavored'
@@ -108,7 +117,8 @@ export const initialProducts = [
         'Hydrolyzed Collagen Peptides',
         42.00,
         'Collagen',
-        '',        'Гідролізований морський колаген для суглобів та шкіри.',
+        '/images/Hydrolyzed Collagen Peptides.jpeg',
+        'Гідролізований морський колаген для суглобів та шкіри.',
         '10g',
         30,
         'Neutral'
@@ -118,7 +128,8 @@ export const initialProducts = [
         'Collagen + Vitamin C Complex',
         38.50,
         'Collagen',
-        '',        'Пептиди колагену з вітаміном C для покращеного засвоєння.',
+        '/images/Collagen + Vitamin C Complex.jpeg',
+        'Пептиди колагену з вітаміном C для покращеного засвоєння.',
         '11g',
         30,
         'Orange Burst'
@@ -128,7 +139,8 @@ export const initialProducts = [
         'Beauty Collagen Powder',
         45.00,
         'Collagen',
-        '',        'Колагеновий комплекс із гіалуроновою кислотою та біотином.',
+        '/images/Beauty Collagen Powder.jpeg',
+        'Колагеновий комплекс із гіалуроновою кислотою та біотином.',
         '12g',
         25,
         'Wild Berry'
@@ -139,7 +151,8 @@ export const initialProducts = [
         'Glucosamine Chondroitin MSM',
         28.99,
         'Joints and bones',
-        '',        'Потужний захист та відновлення хрящової тканини.',
+        '/images/Glucosamine Chondroitin MSM.jpeg',
+        'Потужний захист та відновлення хрящової тканини.',
         '3 caps',
         40,
         'Capsules'
@@ -149,7 +162,8 @@ export const initialProducts = [
         'Calcium Magnesium Zinc + D3',
         19.99,
         'Joints and bones',
-        '',        'Мінеральний комплекс для зміцнення кісток та зубів.',
+        '/images/Calcium Magnesium Zinc + D3.jpeg',
+        'Мінеральний комплекс для зміцнення кісток та зубів.',
         '2 tabs',
         50,
         'Tablets'
@@ -159,7 +173,8 @@ export const initialProducts = [
         'Joint Shield Pro Gelatin',
         31.50,
         'Joints and bones',
-        '',        'Рідкий комплекс для профілактики травм суглобів та звʼязок.',
+        '/images/Joint Shield Pro Gelatin.jpeg',
+        'Рідкий комплекс для профілактики травм суглобів та звʼязок.',
         '25ml',
         20,
         'Green Apple'
@@ -170,7 +185,8 @@ export const initialProducts = [
         'Omega-3 Fish Oil 1000mg',
         22.50,
         'Sports supplements for health',
-        '',        'Висококонцентровані омега-3 жирні кислоти EPA / DHA.',
+        '/images/Omega-3 Fish Oil 1000mg.jpeg',
+        'Висококонцентровані омега-3 жирні кислоти EPA / DHA.',
         '2 softgels',
         60,
         'Softgels'
@@ -180,7 +196,8 @@ export const initialProducts = [
         'Daily Multivitamin Sports Pack',
         35.00,
         'Sports supplements for health',
-        '',        'Вітамінно-мінеральний комплекс для активного способу життя.',
+        '/images/Daily Multivitamin Sports Pack.jpeg',
+        'Вітамінно-мінеральний комплекс для активного способу життя.',
         '1 pack',
         30,
         'Packs'
@@ -190,7 +207,8 @@ export const initialProducts = [
         'Coenzyme Q10 + Vitamin E',
         27.99,
         'Sports supplements for health',
-        '',        'Антиоксидантний захист серця та клітинної енергії.',
+        '/images/Coenzyme Q10 + Vitamin E.jpeg',
+        'Антиоксидантний захист серця та клітинної енергії.',
         '1 cap',
         60,
         'Capsules'
@@ -201,7 +219,8 @@ export const initialProducts = [
         'Mass Gainer Extreme 5000',
         59.99,
         'Weight gainer',
-        '',        'Висококалорійний гейнер для швидкого набору мʼязової маси.',
+        '/images/Mass Gainer Extreme 5000.jpeg',
+        'Висококалорійний гейнер для швидкого набору мʼязової маси.',
         '150g',
         20,
         'Chocolate Peanut Butter'
@@ -211,7 +230,8 @@ export const initialProducts = [
         'Lean Mass Builder Complex',
         54.00,
         'Weight gainer',
-        '',        'Гейнер зі складними вуглеводами та високим вмістом білка.',
+        '/images/Lean Mass Builder Complex.jpeg',
+        'Гейнер зі складними вуглеводами та високим вмістом білка.',
         '100g',
         25,
         'Cookies & Cream'
@@ -221,7 +241,8 @@ export const initialProducts = [
         'Oat & Whey Mega Gainer',
         48.50,
         'Weight gainer',
-        '',        'Натуральний гейнер на основі цельнозернового вівса.',
+        '/images/Oat  Whey Mega Gainer.jpeg',
+        'Натуральний гейнер на основі цельнозернового вівса.',
         '120g',
         22,
         'Banana Bread'
@@ -232,7 +253,8 @@ export const initialProducts = [
         'Carbo Nox Fast Energy Powder',
         21.99,
         'Carbohydrates',
-        '',        'Швидкі вуглеводи для заповнення глікогену під час тренування.',
+        '/images/Carbo Nox Fast Energy Powder.jpeg',
+        'Швидкі вуглеводи для заповнення глікогену під час тренування.',
         '50g',
         20,
         'Lemon'
@@ -242,7 +264,8 @@ export const initialProducts = [
         'Cluster Dextrin Intra-Fuel',
         37.99,
         'Carbohydrates',
-        '',        'Високорозгалужений циклічний декстрин без важкості в шлунку.',
+        '/images/Cluster Dextrin Intra-Fuel.jpeg',
+        'Високорозгалужений циклічний декстрин без важкості в шлунку.',
         '30g',
         33,
         'Unflavored'
@@ -252,7 +275,8 @@ export const initialProducts = [
         'Maltodextrin Pure Energy',
         18.50,
         'Carbohydrates',
-        '',        'Чистий мальтодекстрин для приготування ізотонічних напоїв.',
+        '/images/Maltodextrin Pure Energy.jpeg',
+        'Чистий мальтодекстрин для приготування ізотонічних напоїв.',
         '40g',
         25,
         'Neutral'
@@ -263,7 +287,8 @@ export const initialProducts = [
         'Hair Skin & Nails Biotin Complex',
         24.99,
         'Beauty',
-        '',        'Формула з біотином, цинком та селеном для краси та росту волосся.',
+        '/images/Hair Skin & Nails Biotin Complex.jpeg',
+        'Формула з біотином, цинком та селеном для краси та росту волосся.',
         '2 gummies',
         30,
         'Gummies'
@@ -273,7 +298,8 @@ export const initialProducts = [
         'Hyaluronic Acid Radiance Boost',
         32.00,
         'Beauty',
-        '',        'Гіалуронова кислота для зволоження шкіри зсередини.',
+        '/images/Hyaluronic Acid Radiance Boost.jpeg',
+        'Гіалуронова кислота для зволоження шкіри зсередини.',
         '1 cap',
         60,
         'Capsules'
@@ -283,7 +309,8 @@ export const initialProducts = [
         'Detox & Skin Glow Elixir',
         29.50,
         'Beauty',
-        '',        'Натуральний антиоксидантний комплекс для сяйва шкіри.',
+        '/images/Detox & Skin Glow Elixir.jpeg',
+        'Натуральний антиоксидантний комплекс для сяйва шкіри.',
         '10g',
         30,
         'Peach Tea'
@@ -294,7 +321,8 @@ export const initialProducts = [
         'Thermo Shred Fire Matrix',
         39.99,
         'Fat burner',
-        '',        'Потужний термогенний жироспалювач із екстрактом зеленого чаю.',
+        '/images/Thermo Shred Fire Matrix.jpeg',
+        'Потужний термогенний жироспалювач із екстрактом зеленого чаю.',
         15
     ),
     new SupplementProduct(
@@ -302,7 +330,8 @@ export const initialProducts = [
         'L-Carnitine 3000 Liquid Shot',
         26.50,
         'Fat burner',
-        '',        'Рідкий L-карнітин для транспорту жирних кислот в енергію.',
+        '/images/L-Carnitine 3000 Liquid Shot.jpeg',
+        'Рідкий L-карнітин для транспорту жирних кислот в енергію.',
         '25ml',
         20,
         'Mango Passionfruit'
@@ -312,7 +341,8 @@ export const initialProducts = [
         'CLA 1000 Conjugated Linoleic Acid',
         23.00,
         'Fat burner',
-        '',        'Конʼюгована лінолева кислота для підтримки стрункої фігури.',
+        '/images/CLA 1000 Conjugated Linoleic Acid.jpeg',
+        'Конʼюгована лінолева кислота для підтримки стрункої фігури.',
         '1 softgel',
         90,
         'Softgels'
@@ -323,7 +353,8 @@ export const initialProducts = [
         'IronFuel Pro Shaker 700ml',
         12.99,
         'Shaker',
-        '',        'Герметичний шейкер із металевою кулькою для ідеального змішування.',
+        '/images/IronFuel Pro Shaker 700ml.jpeg',
+        'Герметичний шейкер із металевою кулькою для ідеального змішування.',
         'BPA-Free Plastic',
         '700ml'
     ),
@@ -332,7 +363,8 @@ export const initialProducts = [
         'Stainless Steel Thermal Shaker',
         24.99,
         'Shaker',
-        '',        'Термо-шейкер із нержавіючої сталі, що зберігає температуру напою.',
+        '/images/Stainless Steel Thermal Shaker.jpeg',
+        'Термо-шейкер із нержавіючої сталі, що зберігає температуру напою.',
         'Stainless Steel',
         '750ml'
     ),
@@ -341,7 +373,8 @@ export const initialProducts = [
         'Mini Smart Compact Shaker',
         9.99,
         'Shaker',
-        '',        'Компактний шейкер із додатковим контейнером під порошок та таблетки.',
+        '/images/Mini Smart Compact Shaker.jpeg',
+        'Компактний шейкер із додатковим контейнером під порошок та таблетки.',
         'BPA-Free Plastic',
         '500ml'
     )

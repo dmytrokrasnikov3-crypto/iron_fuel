@@ -4,7 +4,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(4px);
     z-index: 1000;
     display: flex;
@@ -14,22 +14,25 @@
 }
 
 .checkout-modal {
-    width: 100%;
-    max-width: 440px;
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 32px 28px;
     position: relative;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    box-sizing: border-box;
+    background-color: #1a1d24;
+    color: #ffffff;
+    width: 100%;
+    max-width: 480px;
+    max-height: 90vh;
+    padding: 28px;
+    border-radius: 12px;
+    border: 1px solid #2a2d34;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    overflow-y: auto;
 }
 
 .close-btn {
     position: absolute;
     top: 20px;
     right: 20px;
-    background: #f3f4f6;
-    border: none;
+    background: #2a2d34;
+    border: 1px solid #374151;
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -37,51 +40,67 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    color: #4b5563;
+    color: #9ca3af;
     transition: all 0.2s ease;
 }
 
 .close-btn:hover {
-    background: #e5e7eb;
-    color: #111827;
+    background: #374151;
+    color: #ffffff;
 }
 
-.checkout-form {
+.checkout-modal h2,
+.checkout-form h2,
+.checkout-success h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    border-bottom: 1px solid #2a2d34;
+    padding-bottom: 12px;
+    text-align: left;
+}
+
+
+.checkout-form,
+.order-form {
     display: flex;
     flex-direction: column;
-}
-
-.checkout-form h2 {
-    margin: 0 0 24px 0;
-    font-size: 22px;
-    font-weight: 800;
-    color: #111827;
-    text-align: left;
+    gap: 14px;
 }
 
 .form-group {
-    margin-bottom: 18px;
+    margin-bottom: 4px;
     display: flex;
     flex-direction: column;
     text-align: left;
 }
 
-.form-group label {
+.form-group label,
+.order-form label {
     font-size: 13px;
     font-weight: 600;
     margin-bottom: 6px;
-    color: #374151;
+    color: #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.order-form input,
+.order-form textarea,
+.order-form select {
     width: 100%;
-    padding: 12px 14px;
-    background-color: #f9fafb;
-    border: 1px solid #d1d5db;
+    background-color: #2a2d34;
+    border: 1px solid #374151;
     border-radius: 8px;
+    padding: 12px 14px;
+    color: #ffffff;
     font-size: 14px;
-    color: #111827;
+    outline: none;
     box-sizing: border-box;
     transition: all 0.2s ease;
     font-family: inherit;
@@ -93,31 +112,35 @@
 }
 
 .form-group input::placeholder,
-.form-group textarea::placeholder {
+.form-group textarea::placeholder,
+.order-form input::placeholder,
+.order-form textarea::placeholder {
     color: #9ca3af;
 }
 
 .form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    background-color: #ffffff;
-    border-color: #111827;
-    box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.1);
+.form-group textarea:focus,
+.order-form input:focus,
+.order-form textarea:focus {
+    background-color: #2a2d34;
+    border-color: #e53935;
+    box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.2);
 }
 
 .error-text {
-    color: #e53935;
+    color: #ef4444;
     font-size: 12px;
     margin-top: 5px;
     font-weight: 500;
 }
 
-.submit-btn {
+.submit-btn,
+.submit-order-btn {
     width: 100%;
-    background: #111827;
+    background-color: #e53935;
     color: #ffffff;
     border: none;
-    padding: 14px;
+    padding: 13px;
     border-radius: 8px;
     font-size: 15px;
     font-weight: 700;
@@ -126,11 +149,13 @@
     transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.submit-btn:hover {
-    background: #e53935;
+.submit-btn:hover,
+.submit-order-btn:hover {
+    background-color: #d32f2f;
 }
 
-.submit-btn:active {
+.submit-btn:active,
+.submit-order-btn:active {
     transform: scale(0.99);
 }
 
@@ -140,13 +165,13 @@
 }
 
 .checkout-success h2 {
-    font-size: 20px;
-    color: #111827;
+    border-bottom: none;
+    text-align: center;
     margin: 16px 0 8px 0;
 }
 
 .checkout-success p {
-    color: #6b7280;
+    color: #9ca3af;
     font-size: 14px;
     margin-bottom: 24px;
 }

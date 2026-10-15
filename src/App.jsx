@@ -1,4 +1,4 @@
-import React, {useState, useMemo, useEffect} from 'react';
+import {useState, useMemo, useEffect} from 'react';
 import {Header} from './components/Header';
 import {SidebarMenu} from './components/SidebarMenu';
 import {ProductCard} from './components/ProductCard';
@@ -9,8 +9,9 @@ import {AuthModal} from './components/AuthModal';
 import {Footer} from './components/Footer';
 import {initialProducts} from './data/products';
 import {Search, Filter} from 'lucide-react';
-import heroBg from './assets/images/hero-bg.jpeg';
 import './App.css';
+
+const heroBg = '/images/hero-bg.jpeg';
 
 function App() {
     const [products, setProducts] = useState(() => {
@@ -41,6 +42,19 @@ function App() {
         return initialProducts;
     });
 
+    const [cart, setCart] = useState(() => {
+        const savedCart = localStorage.getItem('ironfuel_cart');
+        if (savedCart) {
+            try {
+                return JSON.parse(savedCart);
+            } catch (e) {
+                console.error("Помилка зчитування кошика з localStorage", e);
+            }
+        }
+        return [];
+    });
+
+    const [toastMessage, setToastMessage] = useState('');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
@@ -56,9 +70,20 @@ function App() {
             localStorage.setItem('ironfuel_products', JSON.stringify(products));
         } catch (e) {
             console.error("Помилка збереження в localStorage:", e);
-            alert("Пам'ять браузера переповнена! Якщо ви додаєте фотографії, переконайтеся, що вони стискаються у компоненті AdminModal.");
         }
     }, [products]);
+
+    useEffect(() => {
+        try {
+            localStorage.setItem('ironfuel_cart', JSON.stringify(cart));
+        } catch (e) {
+            console.error("Помилка збереження кошика у localStorage:", e);
+        }
+    }, [cart]);
+
+    const totalCartCount = useMemo(() => {
+        return cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+    }, [cart]);
 
     const categories = useMemo(() => ['All', ...new Set(products.map(p => p.category))], [products]);
 
@@ -72,7 +97,7 @@ function App() {
     }, [products, searchQuery, selectedCategory]);
 
     const handleAddProduct = (newProduct) => {
-        setProducts([newProduct, ...products]);
+        setProducts(prevProducts => [newProduct, ...prevProducts]);
     };
 
     const handleDeleteProduct = (id) => {
@@ -97,9 +122,32 @@ function App() {
         );
     };
 
+    const handleAddToCart = (product) => {
+        setCart(prevCart => {
+            const existingIndex = prevCart.findIndex(item => item.id === product.id);
+            if (existingIndex > -1) {
+                const updated = [...prevCart];
+                updated[existingIndex] = {
+                    ...updated[existingIndex],
+                    quantity: (updated[existingIndex].quantity || 1) + 1
+                };
+                return updated;
+            }
+            return [...prevCart, {...product, quantity: 1}];
+        });
+
+        setToastMessage(`Товар "${product.title}" додано до кошика!`);
+
+        setTimeout(() => {
+            setToastMessage('');
+        }, 3000);
+    };
+
     return (
         <div className="app-container">
             <Header
+                currentUser={currentUser}
+                totalCount={totalCartCount}
                 onOpenMenu={() => setIsMenuOpen(true)}
                 onOpenCart={() => setIsCartOpen(true)}
                 onOpenAdmin={() => setIsAdminOpen(true)}
@@ -114,12 +162,19 @@ function App() {
 
             <CartModal
                 isOpen={isCartOpen}
+                cart={cart}
+                setCart={setCart}
                 onClose={() => setIsCartOpen(false)}
-                onProceedToCheckout={() => setIsCheckoutOpen(true)}
+                onProceedToCheckout={() => {
+                    setIsCartOpen(false);
+                    setIsCheckoutOpen(true);
+                }}
             />
 
             <CheckoutModal
                 isOpen={isCheckoutOpen}
+                cart={cart}
+                setCart={setCart}
                 onClose={() => setIsCheckoutOpen(false)}
             />
 
@@ -140,9 +195,7 @@ function App() {
 
             <main className="main-content">
                 <div className="hero-banner">
-                    {}
                     <img src={heroBg} alt="Hero Banner" className="hero-banner-img"/>
-
                 </div>
 
                 <section className="catalog-controls">
@@ -173,13 +226,25 @@ function App() {
                 <section className="products-grid">
                     {filteredProducts.length > 0 ? (
                         filteredProducts.map(product => (
-                            <ProductCard key={product.id} product={product}/>
+                            <ProductCard
+                                key={product.id}
+                                product={product}
+                                onAddToCart={() => handleAddToCart(product)}
+                            />
                         ))
                     ) : (
                         <p className="no-products">За вашим запитом товарів не знайдено.</p>
                     )}
                 </section>
             </main>
+
+            {}
+            {toastMessage && (
+                <div className="toast-notification">
+                    <span className="toast-icon">✅</span>
+                    <span>{toastMessage}</span>
+                </div>
+            )}
 
             <Footer/>
         </div>

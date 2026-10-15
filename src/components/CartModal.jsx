@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, updateQuantity, clearCart } from '../store/cartSlice';
 import { X, Trash2, Plus, Minus, ArrowRight } from 'lucide-react';

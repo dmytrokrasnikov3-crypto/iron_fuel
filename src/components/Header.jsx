@@ -1,12 +1,10 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
-import { Menu, ShoppingBag, Search, User } from 'lucide-react';
+import { Menu, ShoppingBag, User } from 'lucide-react';
 import './Header.css';
 
 export const Header = ({ onOpenMenu, onOpenCart, onOpenAdmin }) => {
     const cartItems = useSelector(state => state.cart.items);
     const totalCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
-
     return (
         <header className="header">
             <div className="header-left">
@@ -17,9 +15,6 @@ export const Header = ({ onOpenMenu, onOpenCart, onOpenAdmin }) => {
             </div>
 
             <div className="header-right">
-                <button className="icon-btn"><Search size={22} /></button>
-
-                {}
                 <button className="icon-btn" onClick={onOpenAdmin} title="Адмін-панель">
                     <User size={22} />
                 </button>

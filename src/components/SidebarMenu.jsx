@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { Heart, User, Mail, ChevronDown, X } from 'lucide-react';
 import './SidebarMenu.css';
 
