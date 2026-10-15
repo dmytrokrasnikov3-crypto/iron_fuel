@@ -4,7 +4,6 @@ import {
     GoogleAuthProvider,
     FacebookAuthProvider,
     signInWithPopup,
-    signOut
 } from 'firebase/auth';
 
 const firebaseConfig = {

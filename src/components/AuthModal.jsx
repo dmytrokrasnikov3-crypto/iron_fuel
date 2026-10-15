@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { X, Lock, Mail, User } from 'lucide-react';
 import { loginWithGoogle, loginWithFacebook } from '../firebase';
 import './AuthModal.css';

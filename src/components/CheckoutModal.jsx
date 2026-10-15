@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearCart } from '../store/cartSlice';
 import { X, CheckCircle } from 'lucide-react';
@@ -27,6 +28,12 @@ export const CheckoutModal = ({ isOpen, onClose }) => {
         if (Object.keys(validationErrors).length > 0) {
             setErrors(validationErrors);
         } else {
+            console.log('Створено замовлення:', {
+                user: formData,
+                items: cartItems,
+                date: new Date().toISOString()
+            });
+
             setIsSubmitted(true);
             dispatch(clearCart());
         }

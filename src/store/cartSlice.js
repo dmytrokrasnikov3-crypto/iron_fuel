@@ -4,7 +4,7 @@ const loadCartFromStorage = () => {
     try {
         const savedCart = localStorage.getItem('ironfuel_cart');
         return savedCart ? JSON.parse(savedCart) : [];
-    } catch (e) {
+    } catch  {
         return [];
     }
 };
